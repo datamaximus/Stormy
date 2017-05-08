@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements
     public static final String DAILY_FORECAST = "DAILY_FORECAST";
     public static final String HOURLY_FORECAST = "HOURLY_FORECAST";
     private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+    public static final String LOCATION_LABEL = "LOCATION_LABEL";
     public final int PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 1;
 
     private Forecast mForecast;
@@ -304,6 +305,7 @@ public class MainActivity extends AppCompatActivity implements
     public void startDailyActivity(View view) {
         Intent intent = new Intent(this, DailyForecastActivity.class);
         intent.putExtra(DAILY_FORECAST, mForecast.getDailyForecast());
+        intent.putExtra(LOCATION_LABEL, mLocationLabel.getText());
         startActivity(intent);
     }
 
