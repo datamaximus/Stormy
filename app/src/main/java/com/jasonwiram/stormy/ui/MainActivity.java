@@ -337,6 +337,7 @@ public class MainActivity extends AppCompatActivity implements
         Log.d(TAG, location.toString());
         latitude = location.getLatitude();
         longitude = location.getLongitude();
+        getForecast(latitude, longitude);
     }
 
     @Override
