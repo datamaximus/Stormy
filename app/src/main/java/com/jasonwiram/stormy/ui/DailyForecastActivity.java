@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jasonwiram.stormy.R;
@@ -16,18 +17,25 @@ import com.jasonwiram.stormy.weather.Day;
 
 import java.util.Arrays;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DailyForecastActivity extends ListActivity {
 
     private Day[] mDays;
+
+    public @BindView(R.id.locationLabel) TextView mLocationLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_forecast);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         Parcelable[] parcelables = intent.getParcelableArrayExtra(MainActivity.DAILY_FORECAST);
         mDays = Arrays.copyOf(parcelables, parcelables.length, Day[].class);
+        mLocationLabel.setText(intent.getStringExtra(MainActivity.LOCATION_LABEL));
 
         DayAdapter adapter = new DayAdapter(this, mDays);
         setListAdapter(adapter);
