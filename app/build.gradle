@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "com.jasonwiram.stormy"
@@ -29,6 +28,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.2.1'
     compile 'com.google.android.gms:play-services-maps:10.2.4'
     compile 'com.google.android.gms:play-services-location:10.2.4'
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
 
 }
