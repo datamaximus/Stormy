@@ -40,15 +40,15 @@
         android:textSize="18sp"/>
 
     <TextView
+        android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phoenix, AZ"
-        android:id="@+id/locationLabel"
         android:layout_above="@+id/timeLabel"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
+        android:text="Phoenix, AZ"
         android:textColor="#ffffff"
-        android:textSize="24sp"/>
+        android:textSize="48sp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -131,20 +131,21 @@
         android:gravity="center"/>
 
     <ImageView
+        android:id="@+id/refreshImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/refreshImageView"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/darkSkyAttribution"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/refresh"/>
+        android:src="@drawable/refresh" />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/refreshImageView"/>
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/darkSkyAttribution"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -172,4 +173,14 @@
             android:textColor="#FFFFFFFF"
             android:background="#40FFFFFF"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/darkSkyAttribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/dark_sky_message"
+        android:textColorLink="@android:color/white" />
 </RelativeLayout>
